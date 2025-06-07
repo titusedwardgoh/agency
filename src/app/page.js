@@ -114,7 +114,7 @@ export default function Home() {
         <div className="flex flex-col items-center text-center gap-5 mt-20 md:mt-15 lg:flex-row lg:max-w-[85vw] lg:mx-auto lg:gap-0 lg:items-stretch lg:mt-30">
           <div className="flex flex-col items-center text-center gap-5 mt-20 md:mt-15 lg:mt-0 lg:w-[35vw] lg:items-start lg:text-left">
             <p className={`text-secondary text-center uppercase tracking-[7px] font-medium text-xs md:text-lg lg:text-left ${roboto.className}`}>Client Feedback</p>
-            <p className="text-secondary capitalize font-black text-3xl text-center md:text-5xl md:max-w-160 lg:text-6xl lg:text-left lg:pr-30">don't just take our word for it</p>
+            <p className="text-secondary capitalize font-black text-3xl text-center md:text-5xl md:max-w-160 lg:text-6xl lg:text-left lg:pr-30">{"don't just take our word for it"}</p>
           </div>
           <CiHashtag size="50" fill="#e23125" className="mt-5 lg:mt-0 "/>
           <div className="w-full lg:w-[40vw] lg:ml-auto">
