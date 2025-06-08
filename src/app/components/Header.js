@@ -44,7 +44,7 @@ export default function Header() {
       {/* Mobile Menu (only visible on small screens) */}
       <ul
         className={`
-          md:hidden absolute top-[72px] left-0 w-full z-40 bg-primary flex flex-col
+          md:hidden fixed top-[72px] left-0 w-full z-40 bg-primary flex flex-col
           transition-transform duration-500 ease-in-out
           ${showMenu ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
         `}
