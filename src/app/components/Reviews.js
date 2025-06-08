@@ -59,7 +59,7 @@ export default function Reviews() {
 
   return (
     // Outer container: exactly viewport width, hides overflow
-    <div className="relative w-[80vw] mx-auto justify-center bg-primary text-secondary flex items-center overflow-hidden" style={{ maxWidth: "100%" }}>
+    <div className="relative w-[50vw] mx-auto justify-center bg-primary text-secondary flex items-center overflow-hidden" style={{ maxWidth: "100%" }}>
       <div
         className={`flex ${isTransitioning ? "transition-transform duration-500 ease-in-out" : ""}`}
         style={{
@@ -72,7 +72,7 @@ export default function Reviews() {
             key={index}
             className="w-full flex flex-col flex-shrink-0 items-center justify-center text-center px-8 lg:text-left lg:items-start lg:px-0 lg:wrap-anywhere lg:pt-10"
           >
-            <p className="w-[80vw] text-lg mb-2 font-bold max-w-xl leading-relaxed mx-auto lg:mx-0 lg:text-4xl">
+            <p className="w-[80vw] lg:w-full text-lg mb-2 font-bold max-w-xl leading-relaxed mx-auto lg:mx-0 lg:text-4xl">
               {review.review}
             </p>
             <div className="pt-7 ">
