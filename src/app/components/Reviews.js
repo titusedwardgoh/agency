@@ -59,7 +59,7 @@ export default function Reviews() {
 
   return (
     // Outer container: exactly viewport width, hides overflow
-    <div className="relative w-[40vw] mx-auto justify-center bg-primary text-secondary flex items-center overflow-hidden" style={{ maxWidth: "100%" }}>
+    <div className="relative w-[100vw] mx-auto justify-center bg-primary text-secondary flex items-center overflow-hidden" style={{ maxWidth: "100%" }}>
       <div
         className={`flex ${isTransitioning ? "transition-transform duration-500 ease-in-out" : ""}`}
         style={{
