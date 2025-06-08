@@ -17,6 +17,7 @@ export const roboto = Roboto_Mono({
 export const metadata = {
   title: "Digital Marketing",
   description: "Change description",
+  viewport: "width=device-width, initial-scale=1.0",
   icons: {
     icon: "/favicon3.png",
   }
