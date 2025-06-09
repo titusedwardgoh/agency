@@ -139,7 +139,7 @@ export default function Home() {
           </Motion.Down>
         </div>
         {/* Client Feedback */}
-        <div className="flex flex-col items-center text-center gap-5 mt-20 md:mt-15 lg:flex-row lg:max-w-[2000px] lg:justify-center lg:gap-0 lg:mx-auto lg:items-stretch lg:mt-30">
+        <div className="flex flex-col items-center text-center gap-5 mt-20 md:mt-15 lg:flex-row w-full lg:max-w-[2000px] lg:justify-center lg:gap-0 lg:mx-auto lg:items-stretch lg:mt-30">
           {/* Error Here */}
           <div className="flex flex-col items-center text-center gap-5 mt-20 md:mt-15 lg:mt-0 lg:w-[600px] lg:items-start lg:text-left">
             <Motion.Up>
