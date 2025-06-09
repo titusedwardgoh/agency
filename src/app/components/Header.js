@@ -18,7 +18,7 @@ export default function Header() {
         <Image src="/logo.svg" width={100} height={27} alt="logo" />
 
         {/* Navigation Row (hidden on mobile) */}
-        <nav className="hidden md:flex gap-7 text-secondary font-bold text-lg">
+        <nav className="hidden md:flex gap-7 text-secondary font-bold text-lg lg:text-xl">
           <a className="cursor-pointer hover:underline">Home</a>
           <a className="cursor-pointer hover:underline">Services</a>
           <a className="cursor-pointer hover:underline">Work</a>

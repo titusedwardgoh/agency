@@ -61,7 +61,7 @@ export default function Reviews() {
     // Outer container: exactly viewport width, hides overflow
     <div className="relative max-w-[85vw] mx-auto justify-center bg-primary text-secondary flex items-center overflow-hidden" style={{ maxWidth: "100%" }}>
       <div
-        className={`flex ${isTransitioning ? "transition-transform duration-500 ease-in-out" : ""}`}
+        className={`flex min-w-0 ${isTransitioning ? "transition-transform duration-500 ease-in-out" : ""}`}
         style={{
           width: `${slides.length * 100}%`,
           transform: `translateX(-${current * 100}%)`
