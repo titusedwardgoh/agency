@@ -25,7 +25,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="dmtheme">
+    <html lang="en" data-theme="dmtheme" className="overflow-x-hidden">
       <body
         className={`${cormorantFont.className} overflow-x-hidden`}
       >
