@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="dmtheme">
       <body
-        className={cormorantFont.className}
+        className={`${cormorantFont.className} overflow-x-hidden`}
       >
         <Header/>
         {children}
