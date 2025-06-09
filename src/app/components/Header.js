@@ -3,9 +3,12 @@
 import { IoMenu, IoClose } from "react-icons/io5";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link"
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [showMenu, setShowMenu] = React.useState(false);
+  const pathname = usePathname()
 
   function handleClick() {
     setShowMenu((prev) => !prev);
@@ -15,14 +18,15 @@ export default function Header() {
     <header className="relative">
       {/* Header */}
       <div className="fixed top-0 left-0 w-full z-50 bg-primary flex justify-between items-center p-5 px-10 md:py-5">
-        <Image src="/logo.svg" width={100} height={27} alt="logo" />
-
+        <Link href="/">
+          <Image src="/logo.svg" width={100} height={27} alt="logo" className="cursor-pointer"/>
+        </Link>
         {/* Navigation Row (hidden on mobile) */}
         <nav className="hidden md:flex gap-7 text-secondary font-bold text-lg lg:text-xl">
-          <a className="cursor-pointer hover:underline">Home</a>
-          <a className="cursor-pointer hover:underline">Services</a>
-          <a className="cursor-pointer hover:underline">Work</a>
-          <a className="cursor-pointer hover:underline">About</a>
+          <a className={`cursor-pointer hover:underline ${pathname === "/" ? "underline decoration-2 underline-offset-4" : null}`}>Home</a>
+          <a className={`cursor-pointer hover:underline ${pathname === "/services" ? "underline decoration-2 underline-offset-4" : null}`}>Services</a>
+          <a className={`cursor-pointer hover:underline ${pathname === "/work" ? "underline decoration-2 underline-offset-4" : null}`}>Work</a>
+          <a className={`cursor-pointer hover:underline ${pathname === "/about" ? "underline decoration-2 underline-offset-4" : null}`}>About</a>
         </nav>
 
         {/* Right-side buttons */}

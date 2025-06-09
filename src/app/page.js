@@ -46,7 +46,7 @@ export default function Home() {
         </div>
         </div>
         {/* Our Services */}
-        <div className = "lg:flex lg:items-center lg:justify-center lg:mt-30 lg:gap-25 ">
+        <div className = "lg:flex lg:items-center lg:justify-center lg:mt-30 lg:gap-25">
         <div className="flex flex-col items-center text-center gap-5 mt-20 lg:mt-0 lg:w-[35vw] lg:items-start">
           <Motion.Up>
             <p className={`text-secondary text-center uppercase tracking-[7px] font-medium text-xs md:text-lg ${roboto.className}`}>our services</p>
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </div>
         {/* Get Inspired */}
-        <div className="flex flex-col items-center text-center gap-5 mt-20 md:mt-15 md:lg:mt-30 md:gap-10">
+        <div className="flex flex-col items-center text-center gap-5 mt-10 md:mt-15 md:lg:mt-30 md:gap-10">
           <div className="flex flex-col items-center text-center gap-5 md:mt-15 mt-20 lg:mt-0">
             <Motion.Up>
               <p className={`text-secondary text-center uppercase tracking-[7px] font-medium text-xs md:text-lg ${roboto.className}`}>Get Inspired</p>
