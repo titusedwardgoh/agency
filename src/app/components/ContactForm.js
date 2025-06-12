@@ -26,7 +26,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col mx-auto px-10 bg-primary rounded-xl gap-4 w-[95vw] md:w-[50vw]">
+    <form onSubmit={handleSubmit} className="flex flex-col mx-auto px-10 md:mx-0 bg-primary rounded-xl gap-4 w-[95vw] md:w-[50vw] lg:max-w-[800px] ">
       <div className="flex flex-col gap-4 md:flex-row">
         <div className="flex-1">
           <input
@@ -75,30 +75,30 @@ export default function ContactForm() {
           className="mt-1 w-full border-b-2 border-secondary text-secondary p-2"
         />
       </div>
+      <div className="flex flex-col gap-4 md:flex-row">
+        <div className="flex-1">
+          <input
+            name="business"
+            type="text"
+            value={formData.business}
+            onChange={handleChange}
+            required
+            placeholder = "Business/Organisation name*"
+            className="mt-1 w-full border-b-2 border-secondary text-secondary p-2"
+          />
+        </div>
 
-      <div>
-        <input
-          name="business"
-          type="text"
-          value={formData.business}
-          onChange={handleChange}
-          required
-          placeholder = "Business/Organisation name*"
-          className="mt-1 w-full border-b-2 border-secondary text-secondary p-2"
-        />
+        <div className="flex-1">
+          <input
+            name="website"
+            type="url"
+            value={formData.website}
+            onChange={handleChange}
+            placeholder = "Website URL"
+            className="mt-1 w-full border-b-2 border-secondary text-secondary p-2"
+          />
+        </div>
       </div>
-
-      <div>
-        <input
-          name="website"
-          type="url"
-          value={formData.website}
-          onChange={handleChange}
-          placeholder = "Website URL"
-          className="mt-1 w-full border-b-2 border-secondary text-secondary p-2"
-        />
-      </div>
-
       <div>
         <textarea
           name="message"
@@ -109,7 +109,7 @@ export default function ContactForm() {
           className="mt-1 w-full border-b-2 border-secondary text-secondary p-2"
         />
       </div>
-      <button className ="btn btn-primary w-36 mx-auto border-2 border-secondary text-secondary text-xl rounded rounded-full md:mx-0 py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5">Submit</button>
+      <button className ="btn btn-primary w-36 mx-auto border-2 border-secondary text-secondary text-xl rounded rounded-full md:mx-0 py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5 lg:self-end">Submit</button>
     </form>
   );
 }

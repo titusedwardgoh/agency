@@ -14,7 +14,7 @@ export default function Footer (){
         };
 
     return(
-        <footer className="footer bg-primary text-base-content p-10 lg:flex lg:flex-col lg:pt-3 lg:gap-8 lg:items-center lg:text-center">
+    <footer className="footer bg-primary text-base-content p-10 lg:flex lg:flex-col lg:pt-3 lg:gap-8 lg:items-center lg:text-center">
       <div className="mx-auto lg:flex lg:justify-between lg:w-full lg:max-w-[1800px]">
         {/* Logo + Description */}
         <div className="flex flex-col gap-5 mx-auto lg:w-[30vw]">
