@@ -38,10 +38,11 @@ export default function Header() {
           >
             {showMenu ? <IoClose /> : <IoMenu />}
           </button>
-
+          <Link href="/contact" onClick={() => setShowMenu(false)}>
           <button className="btn btn-secondary text-xl rounded-full py-1 hover:bg-primary hover:text-secondary md:p-6">
             Contact Us
           </button>
+          </Link>
         </div>
       </div>
 

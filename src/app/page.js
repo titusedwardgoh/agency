@@ -17,7 +17,7 @@ export default function Home() {
       <main className="bg-primary flex flex-col items-center p-5 gap-5">
         {/* Intro */}
         <div className="flex flex-col items-center text-center gap-3 mb-5 mt-20 w-[95vw] max-w-5xl">
-          <p className="text-4xl text-secondary font-black capitalize sm: text-5xl md:text-6xl lg:text-7xl xl:text-8xl">We make brands shine & competitors envious</p>
+          <p className="text-5xl text-secondary font-black capitalize sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">We make brands shine & competitors envious</p>
           <p className="text-secondary font-bold sm:text-lg md:mt-5 lg:md-7 xl:mt-8">Creative digital marketing studio in New York City that makes brands thrive.</p>
         <div className="mt-10 w-[90vw] max-w-420 flex justify-center lg:mt-10">            
             <Carousel/>
