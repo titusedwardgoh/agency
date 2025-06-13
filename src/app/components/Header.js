@@ -54,19 +54,36 @@ export default function Header() {
           ${showMenu ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-full opacity-0 pointer-events-none"}
         `}
       >
-        <li className="text-secondary text-lg font-bold border-b border-secondary py-3 px-4 cursor-pointer">
-          <Link href="/" onClick={() => setShowMenu(false)}>Home</Link>
-        </li>
-        <li className="text-secondary text-lg font-bold border-b border-secondary py-3 px-4 cursor-pointer">
-          <Link href="/services" onClick={() => setShowMenu(false)}>Services</Link>
-        </li>
-        <li className="text-secondary text-lg font-bold border-b border-secondary py-3 px-4 cursor-pointer">
-          <Link href="/work" onClick={() => setShowMenu(false)}>Work</Link>
-        </li>
-        <li className="text-secondary text-lg font-bold border-b border-secondary py-3 px-4 cursor-pointer">
-          <Link href="/about" onClick={() => setShowMenu(false)}>About</Link>
-        </li>
+        <Link
+          href="/"
+          onClick={() => setShowMenu(false)}
+          className="block text-secondary text-lg font-bold border-b border-secondary py-3 px-4 cursor-pointer"
+        >
+          Home
+        </Link>
+        <Link
+          href="/services"
+          onClick={() => setShowMenu(false)}
+          className="block text-secondary text-lg font-bold border-b border-secondary py-3 px-4 cursor-pointer"
+        >
+          Services
+        </Link>
+        <Link
+          href="/work"
+          onClick={() => setShowMenu(false)}
+          className="block text-secondary text-lg font-bold border-b border-secondary py-3 px-4 cursor-pointer"
+        >
+          Work
+        </Link>
+        <Link
+          href="/about"
+          onClick={() => setShowMenu(false)}
+          className="block text-secondary text-lg font-bold border-b border-secondary py-3 px-4 cursor-pointer"
+        >
+          About
+        </Link>
       </ul>
+
 
     </header>
   );
