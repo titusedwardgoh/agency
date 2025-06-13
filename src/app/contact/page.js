@@ -13,7 +13,7 @@ export default function contact(){
                 </div>
             </div>
             {/* block2 */}
-            <div className="md:flex md:w-[90vw] md:mt-20 lg:mt-35 md:mx-auto md:max-w-[1800px]">
+            <div className="md:flex md:w-[90vw] md:mt-20 lg:mt-35 md:mx-auto md:max-w-[1600px]">
                 <div className = "mt-15 md:order-2 md:w-1/2 md:mt-0">
                     <p className="text-secondary capitalize font-black text-2xl md:text-3xl text-center md:text-left md:pl-10 ">Prefer we call you?</p>
                     <p className="text-sm text-secondary text-md font-semibold text-center md:text-lg sm:font-bold md:text-left md:pl-10 ">Fill out your details here and we’ll get back to you within 24 hours.</p>
