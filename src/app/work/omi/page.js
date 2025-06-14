@@ -10,7 +10,7 @@ export default function omi(){
         <div className="bg-primary p-5 text-secondary md:px-10 mt-20 lg:pr-25">
         <div className = "lg:flex xl:max-w-[1800px] xl:mx-auto xl:mt-20">
             <div>
-                <div className="text-lg text-secondary font-bold flex items-center w-[15vw] lg:text-xl xl:text-2xl">
+                <div className="text-lg text-secondary font-bold flex items-center sm:w-[15vw] lg:text-xl xl:text-2xl">
                     <Link href="/work" className="flex items-center gap-1">
                         <GoArrowLeft />
                         <span>Back to All</span>
