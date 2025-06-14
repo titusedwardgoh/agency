@@ -42,7 +42,7 @@ export default function Services() {
             <div className="flex flex-col gap-5 mb-5 lg:flex-row">
               {/* Left Title + Description */}
               <div className="flex flex-col gap-2 md:w-xl lg:w-1/2">
-                <h1 className="text-secondary font-black text-4xl md:text-5xl lg:text-7xl">
+                <h1 id={service.id} className="text-secondary font-black text-4xl md:text-5xl lg:text-7xl scroll-mt-35">
                   {service.title}
                 </h1>
                 <p className="text-secondary text-base md:text-lg font-semibold lg:w-2/3">

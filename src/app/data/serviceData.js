@@ -1,6 +1,7 @@
 const data = [
   {
     title: "Marketing",
+    id:"marketing",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inasdascididunt ut labore et dolore",
     subcontent: [
@@ -38,6 +39,7 @@ const data = [
   },
   {
     title: "Creative & Design",
+    id:"creative",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
     subcontent: [
@@ -65,6 +67,7 @@ const data = [
   },
   {
     title: "Strategy",
+    id:"strat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
     subcontent: [
@@ -102,6 +105,7 @@ const data = [
   },
   {
     title: "Technology",
+    id:"tech",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
     subcontent: [

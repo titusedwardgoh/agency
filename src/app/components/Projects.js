@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { roboto } from "../layout";
 
 export default function Projects() {
@@ -17,13 +18,15 @@ export default function Projects() {
           className="relative w-[90vw] sm:w-[22vw] sm:h-[25rem] lg:h-[40rem] lg:max-w-[400px] h-[30rem] overflow-hidden group"
         >
           {/* Image */}
+          <Link 
+            href={`/work/${item.title.toLowerCase()}`}
+            >
           <Image
             src={item.src}
             alt={item.title}
             fill
-            className="object-cover transition-transform duration-1000 group-hover:scale-110"
+            className="object-cover transition-transform duration-1000 group-hover:scale-110 cursor-pointer"
           />
-
           {/* Red overlay */}
           <div className="absolute inset-0 bg-red-600 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10"></div>
 
@@ -33,6 +36,7 @@ export default function Projects() {
               {item.title}
             </h2>
           </div>
+          </Link>
         </div>
       ))}
     </div>

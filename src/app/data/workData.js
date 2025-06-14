@@ -91,7 +91,7 @@ const workData = [
     slug: "mfk",
     title: "MFK",
     description: "Research, Packaging, Website Design, Content Strategy",
-    client: "MFK Labs",
+    client: "Made For Kids Trade Show",
     year: "2021",
     src: {
       url: "/Post_MFK_Img_Featured.jpg",
@@ -113,22 +113,22 @@ const workData = [
     slug: "cela",
     title: "Cela",
     description: "Ecommerce, Website Development, PPC Management, SEO",
-    client: "Cela Beauty",
-    year: "2024",
+    client: "Cela Jewelry",
+    year: "2022",
     src: {
       url: "/Post_Cela_Img_Featured.jpg",
       width: 869,
       height: 995
     },
     images: [
-      { url: "/Post_Cela_Img_1.jpg", width: 800, height: 500 },
-      { url: "/Post_Cela_Img_2.jpg", width: 800, height: 500 },
-      { url: "/Post_Cela_Img_3.jpg", width: 800, height: 500 }
+      { url: "/Post_Cela_Img_1.jpg", width: 1146, height: 996 },
+      { url: "/Post_Cela_Img_2.jpg", width: 1146, height: 909 },
+      { url: "/Post_Cela_Img_3.jpg", width: 1146, height: 647 }
     ],
     body: [
-      "Placeholder paragraph 1 for Cela.",
-      "Placeholder paragraph 2 for Cela.",
-      "Placeholder paragraph 3 for Cela."
+      "Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Ullamco laboris nisi ut aliquip ex ea commodo consequa. Duis aute irure dolor in reprehenderit in voluptate. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Ullamco laboris nisi ut aliquip ex ea commodo consequa. Duis aute irure dolor in reprehenderit in voluptate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis exercitation. Ullamco laboris nisi ut aliquip ex ea commodo consequa.",
+      "Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Ullamco laboris nisi ut aliquip ex ea commodo consequa. Duis aute irure dolor in reprehenderit in voluptate. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Ullamco laboris nisi ut aliquip ex ea commodo consequa. Duis aute irure dolor in reprehenderit in voluptate. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+      "nil"
     ]
   }
 ];

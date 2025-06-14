@@ -8,6 +8,7 @@ import { CiHashtag } from "react-icons/ci";
 import Projects from "./components/Projects";
 import Clients from "./components/Clients";
 import Image from "next/image"
+import Link from "next/link";
 import Reviews from "./components/Reviews";
 import Motion from "./components/Animations/index";
 import LetsTalk from "./components/LetsTalk";
@@ -33,7 +34,9 @@ export default function Home() {
           <p className="text-secondary capitalize font-black text-3xl text-center md:text-5xl md:max-w-160 lg:text-6xl lg:text-left lg:pr-30">360° creative digital marketing studio</p>
           <p className="text-sm text-secondary text-md font-semibold text-center md:max-w-180 lg:text-left sm:font-bold md:text-lg lg:pr-4 sm:px-20 lg:px-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
           <Motion.Down>
-            <button className ="btn btn-primary border-2 border-secondary text-secondary text-xl rounded rounded-full py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5">Learn More</button>      
+            <Link href="/contact">
+              <button className ="btn btn-primary border-2 border-secondary text-secondary text-xl rounded rounded-full py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5">Learn More</button>      
+            </Link>
           </Motion.Down>
         </div>
         <div className="my-10 relative mx-auto w-[90vw] h-80 md:h-180 lg:w-[40vw] overflow-hidden flex justify-center lg:order-1">
@@ -55,7 +58,9 @@ export default function Home() {
           <p className="text-secondary capitalize font-black text-3xl text-center md:text-5xl md:max-w-160 lg:text-6xl lg:text-left lg:pr-30">custom & scalable marketing solutions</p>
           <p className="text-sm text-secondary text-md font-semibold text-center sm:font-bold md:max-w-180 lg:text-left md:text-lg lg:pr-4 sm:px-20 lg:px-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
           <Motion.Down>
-            <button className ="btn btn-primary border-2 border-secondary text-secondary text-xl rounded rounded-full py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5">All Services</button>      
+            <Link href="/services">
+              <button className ="btn btn-primary border-2 border-secondary text-secondary text-xl rounded rounded-full py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5">All Services</button>      
+            </Link>
           </Motion.Down>
         </div>
           <div className = "py-5 sm:flex flex-wrap justify-center lg:w-[40vw]">
@@ -69,7 +74,9 @@ export default function Home() {
                     <p className = "text-secondary sm:text-lg font-medium">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur.</p>
                     <div className="card-actions">
                       <Motion.Right x={150} duration={0.3} delay={0.7}>
-                        <button className="btn btn-primary border-none sm:text-lg lg:text-xl cursor-pointer hover: shadow-none hover:scale-85 transition-transform duration-800 hover:bg-primary sm:font-black text-secondary font-bold">Learn More</button>
+                        <Link href="/services#marketing">
+                          <button className="btn btn-primary border-none sm:text-lg lg:text-xl cursor-pointer hover: shadow-none hover:scale-85 transition-transform duration-800 hover:bg-primary sm:font-black text-secondary font-bold">Learn More</button>
+                        </Link>
                       </Motion.Right>
                     </div>
                   </div>
@@ -85,7 +92,9 @@ export default function Home() {
                   <p className = "text-secondary sm:text-lg font-medium">Duis aute irure dolor in reprehenderit in volLefttate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur.</p>
                   <div className="card-actions">
                     <Motion.Down x={150} duration={0.3} delay={0.7}>
-                      <button className="btn btn-primary border-none sm:text-lg lg:text-xl cursor-pointer hover: shadow-none hover:scale-85 transition-transform duration-800 hover:bg-primary sm:font-black text-secondary font-bold">Learn More</button>
+                      <Link href="/services#creative">
+                        <button className="btn btn-primary border-none sm:text-lg lg:text-xl cursor-pointer hover: shadow-none hover:scale-85 transition-transform duration-800 hover:bg-primary sm:font-black text-secondary font-bold">Learn More</button>
+                      </Link>
                     </Motion.Down>
                   </div>
                 </div>
@@ -101,7 +110,9 @@ export default function Home() {
                   <p className = "text-secondary sm:text-lg font-medium">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur.</p>
                   <div className="card-actions">
                     <Motion.Up x={150} duration={0.3} delay={0.7}>
-                      <button className="btn btn-primary border-none sm:text-lg lg:text-xl cursor-pointer hover: shadow-none hover:scale-85 transition-transform duration-800 hover:bg-primary sm:font-black text-secondary font-bold">Learn More</button>
+                      <Link href="/services#strat">
+                        <button className="btn btn-primary border-none sm:text-lg lg:text-xl cursor-pointer hover: shadow-none hover:scale-85 transition-transform duration-800 hover:bg-primary sm:font-black text-secondary font-bold">Learn More</button>
+                      </Link>
                     </Motion.Up>
                   </div>
                 </div>
@@ -117,7 +128,9 @@ export default function Home() {
                   <p className = "text-secondary sm:text-lg font-medium">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur.</p>
                   <div className="card-actions">
                     <Motion.Left x={150} duration={0.3} delay={0.7}>
-                      <button className="btn btn-primary border-none sm:text-lg lg:text-xl cursor-pointer hover: shadow-none hover:scale-85 transition-transform duration-800 hover:bg-primary sm:font-black text-secondary font-bold">Learn More</button>
+                      <Link href="/services#tech">
+                        <button className="btn btn-primary border-none sm:text-lg lg:text-xl cursor-pointer hover: shadow-none hover:scale-85 transition-transform duration-800 hover:bg-primary sm:font-black text-secondary font-bold">Learn More</button>
+                      </Link>
                     </Motion.Left>
                   </div>
                 </div>
@@ -136,7 +149,9 @@ export default function Home() {
           </div>
           <Projects/>
           <Motion.Down>
-            <button className ="btn btn-primary border-2 border-secondary text-secondary text-xl rounded rounded-full py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5">All Projects</button>      
+            <Link href="/work">
+              <button className ="btn btn-primary border-2 border-secondary text-secondary text-xl rounded rounded-full py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5">All Projects</button>      
+            </Link>
           </Motion.Down>
         </div>
         {/* Client Feedback */}

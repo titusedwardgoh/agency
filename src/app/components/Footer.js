@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link";
 import React from "react"
 
 export default function Footer (){
@@ -32,10 +33,10 @@ export default function Footer (){
             <div className="flex flex-row w-full mt-5 lg:w-[30vw] lg:max-w-150 lg:mt-0">
                 <nav className="flex flex-col gap-2 w-1/2 lg:text-left">
                     <h6 className="text-secondary text-xl font-black md:text-2xl">Quick Links</h6>
-                    <a className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Home</a>
-                    <a className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Services</a>
-                    <a className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Work</a>
-                    <a className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">About</a>
+                    <Link href="/" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Home</Link>
+                    <Link href="/services" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Services</Link>
+                    <Link href="/work" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Work</Link>
+                    <Link href="/about" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">About</Link>
                 </nav>
                 <div className="w-1/2 lg:text-left">
                     <h6 className="text-secondary text-xl font-black md:text-2xl ">Contact Info</h6>
