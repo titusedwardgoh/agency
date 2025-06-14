@@ -20,7 +20,7 @@ export default function LetsTalk() {
             </Motion.Down>
         </div>
         {/* divider */}
-        <div className="divider divider-secondary"></div>
+        <div className="divider divider-secondary mt-20"></div>
         </>
     )
 }
