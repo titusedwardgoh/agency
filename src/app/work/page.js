@@ -30,9 +30,10 @@ export default function Work() {
               key={i}
               title={item.title}
               description={item.description}
-              image={item.src}
-              width={item.width}
-              height={item.height}
+              image={item.src.url}
+              width={item.src.width}
+              height={item.src.height}
+              slug={item.slug}
             />
           ))}
         </div>

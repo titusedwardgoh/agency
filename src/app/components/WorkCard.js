@@ -6,7 +6,7 @@ export default function WorkCard(props){
     return(
         <div className = "flex flex-col gap-1 mb-20">
             <Link 
-            href={`/work/${props.title}`}
+            href={`/work/${props.slug}`}
             className = "flex flex-col gap-7"
             >
                 <Image
