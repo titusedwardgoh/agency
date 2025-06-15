@@ -37,6 +37,7 @@ export default function Footer (){
                     <Link href="/services" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Services</Link>
                     <Link href="/work" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Work</Link>
                     <Link href="/about" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">About</Link>
+                    <Link href="/contact" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Contact Us</Link>
                 </nav>
                 <div className="w-1/2 lg:text-left">
                     <h6 className="text-secondary text-xl font-black md:text-2xl ">Contact Info</h6>
