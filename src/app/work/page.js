@@ -1,5 +1,3 @@
-import { roboto } from "../layout";
-import Image from "next/image";
 import LetsTalk from "../components/LetsTalk";
 import WorkCard from "../components/WorkCard";
 import workData from "../data/workData";
@@ -13,7 +11,7 @@ export default function Work() {
   }
 
   return (
-    <div className="bg-primary flex flex-col items-center p-5 gap-3 md:px-10">
+    <div className="bg-primary flex flex-col items-center p-5 gap-3 md:px-10 xl:pt-30">
       <div className="flex flex-col items-center text-center gap-3 mb-5 mt-20 w-[95vw] max-w-5xl">
         <p className="text-5xl text-secondary font-black capitalize sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
           explore Our work

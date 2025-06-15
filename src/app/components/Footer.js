@@ -28,7 +28,7 @@ export default function Footer (){
                     className="mx-auto lg:mx-0"
                 />
                 </div>
-                <p className="text-secondary text-center text-md font-semibold mb-3 max-w-150 mx-auto md:max-w-180 md:text-lg sm:font-bold lg:text-left">We’re a full-stack digital marketing studio based in the center of New York City. From strategy to implementation, we’re here to help make your brand shine.</p>
+                <p className="text-secondary text-center text-md font-semibold mb-3 max-w-150 mx-auto md:max-w-180 md:text-lg sm:font-bold lg:text-left xl:pr-30">We’re a full-stack digital marketing studio based in the center of New York City. From strategy to implementation, we’re here to help make your brand shine.</p>
             </div>
             <div className="flex flex-row w-full mt-5 lg:w-[30vw] lg:max-w-150 lg:mt-0">
                 <nav className="flex flex-col gap-2 w-1/2 lg:text-left">

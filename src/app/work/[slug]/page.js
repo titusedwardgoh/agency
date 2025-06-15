@@ -19,7 +19,7 @@ export default async function WorkPage({ params }) {
     const recommendedProjects = getRandomProjects(otherProjects, 2);
 
     return (
-        <div className="bg-primary sm:px-10 p-5 text-secondary mt-20 lg:pr-25">
+        <div className="bg-primary sm:px-10 p-5 text-secondary mt-20 lg:pr-25 xl:pt-30">
             <div className="lg:flex xl:max-w-[1800px] xl:mx-auto xl:mt-20">
                 <div>
                     <div className="text-lg text-secondary font-bold flex items-center sm:w-[15vw] lg:text-xl xl:text-2xl">
@@ -35,7 +35,7 @@ export default async function WorkPage({ params }) {
                     </div>
                     <div className="divider divider-secondary"></div>
                     <div className="flex flex-col gap-10">
-                        <div className="flex flex-col gap-10 md:flex-row">
+                        <div className="flex flex-col gap-10 md:flex-row md:mt-5 lg:mt-10">
                             <div className="text-secondary flex flex-col gap-3 md:w-[30%]">
                                 <div>
                                     <p className="font-black text-lg lg:text-xl">Client</p>
@@ -51,7 +51,7 @@ export default async function WorkPage({ params }) {
                                 </div>
                             </div>
                             {project.body[0] !== "nil" && (
-                                <div className="mt-10 font-medium text-base lg:text-lg lg:font-semibold">
+                                <div className="mt-10 font-medium text-base lg:text-lg lg:font-semibold md:w-[70%] md:mt-0">
                                     <p>{project.body[0]}</p>
                                 </div>
                             )}

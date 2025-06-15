@@ -6,7 +6,7 @@ import LetsTalk from "../components/LetsTalk";
 
 export default function Services() {
   return (
-    <div className="bg-primary flex flex-col items-center p-5 gap-3 md:px-10">
+    <div className="bg-primary flex flex-col items-center p-5 gap-3 md:px-10 xl:pt-30">
       {/* Hero Section */}
       <div className="flex flex-col items-center text-center mb-5 mt-10 w-full max-w-[1600px] px-5 mx-auto md:mt-20">
         <div className="relative w-full max-w-[1600px] h-60 md:h-[30vw] overflow-hidden flex items-center mx-auto">
@@ -38,7 +38,7 @@ export default function Services() {
         const right = service.subcontent.slice(half);
 
         return (
-          <div key={index} className="w-full max-w-[1600px] px-5 mx-auto">
+          <div key={index} className="w-full max-w-[1600px] px-5 mx-auto ">
             <div className="flex flex-col gap-5 mb-5 lg:flex-row">
               {/* Left Title + Description */}
               <div className="flex flex-col gap-2 md:w-xl lg:w-1/2">
