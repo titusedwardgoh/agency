@@ -11,19 +11,71 @@ export default function ContactForm() {
     business: "",
     website: "",
     message: "",
+    subscribe: false, // 👈 add this
   });
+
+
+  const [status, setStatus] = useState("idle"); // idle | success | error
+  const [responseMessage, setResponseMessage] = useState("");
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: Add submission logic (API call, email, etc.)
-    console.log("Form submitted:", formData);
-    alert("Form submitted! Check console for data.");
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      setResponseMessage("Thanks! We'll be in touch soon.");
+      setStatus("success");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        business: "",
+        website: "",
+        message: "",
+        subscribe: false,
+      });
+    } else {
+      setResponseMessage("Submission failed. Please try again.");
+      setStatus("error");
+    }
+  } catch (error) {
+    console.error("Submit error:", error);
+    setResponseMessage("Unexpected error. Please try again.");
+    setStatus("error");
+  }
+
+  // If user opts into newsletter, send email to the same newsletter API
+  if (formData.subscribe && formData.email) {
+    try {
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: formData.email }),
+      });
+    } catch (err) {
+      console.warn("Newsletter subscription failed:", err);
+      // Optional: silently fail — don't block main form submission
+    }
+  }
+
+
+};
+
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col mx-auto px-10 md:mx-0 bg-primary rounded-xl gap-4 w-[95vw] md:w-[50vw] lg:max-w-[800px] ">
@@ -99,6 +151,20 @@ export default function ContactForm() {
           />
         </div>
       </div>
+      <div className="flex items-center gap-2">
+        <input
+          type="checkbox"
+          name="subscribe"
+          checked={formData.subscribe}
+          onChange={(e) =>
+            setFormData((prev) => ({ ...prev, subscribe: e.target.checked }))
+          }
+          className="checkbox checkbox-secondary"
+        />
+        <label htmlFor="subscribe" className="text-secondary font-semibold text-sm mt-2">
+          Subscribe to our newsletter
+        </label>
+      </div>
       <div>
         <textarea
           name="message"
@@ -109,7 +175,16 @@ export default function ContactForm() {
           className="mt-1 w-full border-b-2 border-secondary text-secondary p-2"
         />
       </div>
-      <button className ="btn btn-primary w-36 mx-auto border-2 border-secondary text-secondary text-xl rounded rounded-full md:mx-0 py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5 lg:self-end">Submit</button>
+      {status === "idle" ? (
+          <button className="btn btn-primary w-36 mx-auto border-2 border-secondary text-secondary text-xl rounded-full md:mx-0 py-1 hover:bg-secondary hover:text-primary lg:text-2xl lg:p-5 lg:self-end">
+            Submit
+          </button>
+        ) : (
+          <p className="text-secondary text-lg text-center font-semibold mt-4">
+            {responseMessage}
+          </p>
+        )}
+
     </form>
   );
 }

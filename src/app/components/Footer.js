@@ -4,78 +4,114 @@ import Image from "next/image"
 import Link from "next/link";
 import React from "react"
 
-export default function Footer (){
+export default function Footer() {
+    const [email, setEmail] = React.useState("");
+    const [message, setMessage] = React.useState("");
+    const [status, setStatus] = React.useState("idle"); // "success" | "error" | "idle"
 
-        const [email, setEmail] = React.useState("");
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
 
-        const handleSubmit = (e) => {
-            e.preventDefault(); // prevent page reload
-            console.log("Submitted email:", email);
-            // You can add your API call or logic here
-        };
+            if (!res.ok) throw new Error("Subscription failed");
 
-    return(
-    <footer className="footer bg-primary text-base-content p-10 lg:flex lg:flex-col lg:pt-3 lg:gap-8 lg:items-center lg:text-center">
-      <div className="mx-auto lg:flex lg:justify-between lg:w-full lg:max-w-[1800px]">
-        {/* Logo + Description */}
-        <div className="flex flex-col gap-5 mx-auto lg:w-[30vw]">
-          <div className="w-full flex justify-center lg:justify-start">
-                <Image
-                    src="/logo.svg"
-                    width={100}
-                    height={27}
-                    alt="logo"
-                    className="mx-auto lg:mx-0"
-                />
+            const data = await res.json();
+            setMessage(data.message);
+            setStatus("success");
+            setEmail("");
+        } catch (error) {
+            setMessage(error.message);
+            setStatus("error");
+        }
+    };
+
+    return (
+        <footer className="footer bg-primary text-base-content p-10 lg:flex lg:flex-col lg:pt-3 lg:gap-8 lg:items-center lg:text-center">
+            <div className="mx-auto lg:flex lg:justify-between lg:w-full lg:max-w-[1800px]">
+                {/* Logo + Description */}
+                <div className="flex flex-col gap-5 mx-auto lg:w-[30vw]">
+                    <div className="w-full flex justify-center lg:justify-start">
+                        <Image
+                            src="/logo.svg"
+                            width={100}
+                            height={27}
+                            alt="logo"
+                            className="mx-auto lg:mx-0"
+                        />
+                    </div>
+                    <p className="text-secondary text-center text-md font-semibold mb-3 max-w-150 mx-auto md:max-w-180 md:text-lg sm:font-bold lg:text-left xl:pr-30">
+                        We’re a full-stack digital marketing studio based in the center of New York City. From strategy to implementation, we’re here to help make your brand shine.
+                    </p>
                 </div>
-                <p className="text-secondary text-center text-md font-semibold mb-3 max-w-150 mx-auto md:max-w-180 md:text-lg sm:font-bold lg:text-left xl:pr-30">We’re a full-stack digital marketing studio based in the center of New York City. From strategy to implementation, we’re here to help make your brand shine.</p>
-            </div>
-            <div className="flex flex-row w-full mt-5 lg:w-[30vw] lg:max-w-150 lg:mt-0">
-                <nav className="flex flex-col gap-2 w-1/2 lg:text-left">
-                    <h6 className="text-secondary text-xl font-black md:text-2xl">Quick Links</h6>
-                    <Link href="/" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Home</Link>
-                    <Link href="/services" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Services</Link>
-                    <Link href="/work" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Work</Link>
-                    <Link href="/about" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">About</Link>
-                    <Link href="/contact" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Contact Us</Link>
-                </nav>
-                <div className="w-1/2 lg:text-left">
-                    <h6 className="text-secondary text-xl font-black md:text-2xl ">Contact Info</h6>
-                    <p className="text-secondary font-bold text-md md:text-lg sm:font-bold mt-2">1890 W 52nd Street New York,</p>
-                    <p className="text-secondary font-bold text-md md:text-lg sm:font-bold">New York 10019</p>
-                    <p className="text-secondary font-bold text-md md:text-lg sm:font-bold">212-440-1919</p>
-                    <p className="text-secondary font-bold text-md md:text-lg sm:font-bold">Mon-Fri 9am-6pm</p>
+
+                {/* Quick Links & Contact Info */}
+                <div className="flex flex-row w-full mt-5 lg:w-[30vw] lg:max-w-150 lg:mt-0">
+                    <nav className="flex flex-col gap-2 w-1/2 lg:text-left">
+                        <h6 className="text-secondary text-xl font-black md:text-2xl">Quick Links</h6>
+                        <Link href="/" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Home</Link>
+                        <Link href="/services" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Services</Link>
+                        <Link href="/work" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Work</Link>
+                        <Link href="/about" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">About</Link>
+                        <Link href="/contact" className="link link-hover text-secondary font-bold text-md md:text-lg sm:font-bold">Contact Us</Link>
+                    </nav>
+                    <div className="w-1/2 lg:text-left">
+                        <h6 className="text-secondary text-xl font-black md:text-2xl">Contact Info</h6>
+                        <p className="text-secondary font-bold text-md md:text-lg sm:font-bold mt-2">1890 W 52nd Street New York,</p>
+                        <p className="text-secondary font-bold text-md md:text-lg sm:font-bold">New York 10019</p>
+                        <p className="text-secondary font-bold text-md md:text-lg sm:font-bold">212-440-1919</p>
+                        <p className="text-secondary font-bold text-md md:text-lg sm:font-bold">Mon-Fri 9am-6pm</p>
+                    </div>
+                </div>
+
+                {/* Newsletter Sign Up */}
+                <div className="w-full mx-auto flex flex-col justify-center gap-5 mt-5 lg:w-[30vw] lg:max-w-150 lg:mt-0 lg:mx-0">
+                    <div className="flex flex-col gap-5 justify-center">
+                        <p className="capitalize font-black text-xl text-secondary mx-auto md:text-2xl text-center lg:mx-0 lg:text-left">join our Newsletter</p>
+                        <p className="text-secondary text-center text-md font-semibold md:text-lg lg:mx-0 lg:text-left">
+                            Sign up for our newsletter to enjoy free marketing tips, inspirations, and more.
+                        </p>
+                    </div>
+                    <div className="w-full flex flex-col gap-3 min-h-[4rem]">
+                        <form
+                            onSubmit={handleSubmit}
+                            className={`flex flex-col w-full gap-2 items-center md:flex-row md:justify-between md:gap-15 lg:gap-5 ${message ? "hidden" : "block"}`}
+                        >
+                            <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Email Address"
+                            required
+                            className="border-b-2 border-secondary text-secondary px-4 py-2 w-full md:text-lg"
+                            />
+                            <button
+                            type="submit"
+                            className="btn btn-primary border-2 border-secondary text-secondary text-xl rounded rounded-full py-1 hover:bg-secondary hover:text-primary w-full md:w-1/4 lg:h-full lg:rounded-4xl lg:leading-none lg:p-3"
+                            >
+                            Sign Me Up
+                            </button>
+                        </form>
+
+                        <p className={`capitalize font-black text-xl text-secondary mx-auto md:text-2xl text-center lg:mx-0 lg:text-left transition-opacity duration-300 ${message ? "opacity-100" : "opacity-0"}`}>
+                            {message || " "}
+                        </p>
+                    </div>
+
                 </div>
             </div>
-            <div className="w-full mx-auto flex flex-col justify-center gap-5 mt-5 lg:w-[30vw] lg:max-w-150 lg:mt-0 lg:mx-0">
-                <div className="flex flex-col gap-5 justify-center">
-                    <p className="capitalize font-black text-xl text-secondary mx-auto md:text-2xl text-center lg:mx-0 lg:text-left">join our Newsletter</p>
-                    <p className = "text-secondary text-center text-md font-semibold md:text-lg lg:mx-0 lg:text-left">Sign up for our newsletter to enjoy free marketing tips, inspirations, and more.</p>    
-                </div>
-                <form onSubmit={handleSubmit} className="flex flex-col w-full gap-2 items-center md:flex-row md:justify-between md:gap-15 lg:gap-5">
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email Address"
-                        required
-                        className="border-b-2 border-secondary text-secondary px-4 py-2 w-full md:text-lg"
-                    />
-                    <button
-                        type="submit"
-                        className="btn btn-primary border-2 border-secondary text-secondary text-xl rounded rounded-full py-1 hover:bg-secondary hover:text-primary w-full md:w-1/4 lg:h-full lg:rounded-4xl lg:leading-none lg:p-3"
-                    >
-                        Sign Me Up
-                    </button>
-                    </form>
-            </div>
-            </div>
+
+            {/* Bottom Footer Section */}
             <div className="w-full mx-auto lg:max-w-[1800px]">
                 <nav className="w-full flex flex-col items-center gap-2 lg:flex-row lg:justify-between">
-                <h6 className="text-secondary text-md font-semibold md:text-lg">
-                    © 2025 Younic. All Rights Reserved.
-                </h6>
-                <div className="grid grid-flow-col gap-4">
+                    <h6 className="text-secondary text-md font-semibold md:text-lg">
+                        © 2025 Younic. All Rights Reserved.
+                    </h6>
+                    <div className="grid grid-flow-col gap-4">
                         <a>
                             <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -119,5 +155,5 @@ export default function Footer (){
                 </nav>
             </div>
         </footer>
-    )
+    );
 }
